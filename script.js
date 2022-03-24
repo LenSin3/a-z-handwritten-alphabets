@@ -2,6 +2,34 @@ var canvas, ctx, saveButton, clearButton;
 var pos = {x:0, y:0};
 var rawImage;
 var model;
+var chars = ['A',
+'B',
+'C',
+'D',
+'E',
+'F',
+'G',
+'H',
+'I',
+'J',
+'K',
+'L',
+'M',
+'N',
+'O',
+'P',
+'Q',
+'R',
+'S',
+'T',
+'U',
+'V',
+'W',
+'X',
+'Y',
+'Z'];
+
+
 
 function setPosition(e){
 	pos.x = e.clientX-100;
@@ -33,7 +61,8 @@ function save() {
 	var tensor = resized.expandDims(0);
     var prediction = model.predict(tensor);
     var pIndex = tf.argMax(prediction, 1).dataSync();
-    var write_msg = `You wrote ${pIndex}`
+    var alphabet = chars[pIndex]
+    var write_msg = `You wrote ${alphabet}`
 	return write_msg;
 }
 
