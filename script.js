@@ -1,7 +1,7 @@
 var canvas, ctx, saveButton, clearButton;
 var pos = {x:0, y:0};
 var rawImage;
-// var model;
+var model;
 
 function setPosition(e){
 	pos.x = e.clientX-100;
@@ -60,7 +60,7 @@ function init() {
 
 async function run() {  
 	const MODEL_URL = 'model.json'
-	const model = await tf.loadlayersModel(MODEL_URL);
+	model = await tf.loadLayersModel(MODEL_URL);
 	init();
 }
 
