@@ -1,0 +1,14 @@
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,100,700,900);
+ .h2 {
+    position:relative;
+    top: 140px;
+    left: 140px;
+    width:280;
+    height:280;
+    text-align: center; 
+    margin: auto; 
+    font-size: 10.0em;
+    padding: 10px 0;
+    display: inline-block;
+    font-weight: 800;
+}

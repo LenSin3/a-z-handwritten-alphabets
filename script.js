@@ -61,8 +61,10 @@ function save() {
 	var tensor = resized.expandDims(0);
     var prediction = model.predict(tensor);
     var pIndex = tf.argMax(prediction, 1).dataSync();
-    var alphabet = chars[pIndex]
-    var write_msg = `You wrote ${alphabet}`
+    var alphabet = chars[pIndex];
+    var write_msg = `${alphabet}`;
+    document.getElementById("predOut").style.fontStyle = "italic";
+    // document.getElementById("predOut").style.fontSize = "xx-large";
 	return write_msg;
 }
 
